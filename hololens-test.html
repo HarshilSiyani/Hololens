@@ -1,0 +1,39 @@
+
+<html>
+<head>
+    <title>Document</title>
+</head>
+    <body>
+        <div>
+            <center>
+                <h1>Perspective from the User wearing Hololens</h1>
+                <h2>You are currently watching a live stream of the hololens perspective </h2>
+            
+        </div>
+            <div> 
+                <object type="text/html" data="https://10.137.75.15/api/holographic/stream/live.mp4?RenderFromCamera=false" width="100%" height="80%" style="overflow:auto;border:5px">
+                </object>
+             </div>
+             <!-- <div class="frame">
+                 <iframe src="https://10.137.75.15/api/holographic/stream/live.mp4?RenderFromCamera=false" allow='autoplay; fullscreen'frameborder="0"></iframe>
+             </div> -->
+                <br><br><br>
+            </center>
+             <button id = 'button-id'>Start</button>
+             <script>
+                 const button = document.getElementById('button-id');
+        
+        button.addEventListener('click', function () {
+            fetch('https://10.137.75.15/api/power/battery')
+                .then(function (result) {
+                    console.log(result);
+                })
+                .catch(function (err) {
+                    console.error(err);
+                });
+        });
+             </script>
+        </body>
+
+</html>
+
